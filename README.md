@@ -37,4 +37,5 @@ Repository Contents
 - Findings & Discussion: Summary of key results and implications
   
 Contributions
+
 This study underscores the necessity of gender-specific approaches to CHD prevention. If you're interested in contributing to further research, feel free to open an issue or submit a pull request.
