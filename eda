@@ -1,0 +1,62 @@
+library(ggplot2)
+
+# age
+ggplot(men_data, aes (x = age)) + geom_histogram(fill = "blue", alpha = 0.2) + ggtitle("Distribution of Men Ages") + xlab("Age")
+ggplot(women_data, aes (x = age)) + geom_histogram(fill = "red", alpha = 0.2) + ggtitle("Distribution of Women Ages") + xlab("Age")
+
+# education
+ggplot(men_data, aes (x = as.factor(education), fill = as.factor(education))) + geom_bar() + ggtitle("Distribution of Men Education") + xlab("Education") + scale_fill_discrete(name = "Level of Education", labels = c("Higher Secondary", "Graduation", "Post-Graduation", "PHD"))
+ggplot(women_data, aes (x = as.factor(education), fill = as.factor(education))) + geom_bar() + ggtitle("Distribution of Women Education") + xlab("Education") + scale_fill_discrete(name = "Level of Education", labels = c("Higher Secondary", "Graduation", "Post-Graduation", "PHD"))
+
+#currentSmoker
+ggplot(men_data, aes(x = "", fill = as.factor(currentSmoker))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Men Smokers") + theme_void() + scale_fill_discrete(name = "People", labels = c("Nonsmoker", "Smoker"))
+ggplot(women_data, aes(x = "", fill = as.factor(currentSmoker))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Women Smokers") + theme_void() + scale_fill_discrete(name = "People", labels = c("Nonsmoker", "Smoker"))
+
+#cigsPerDay
+ggplot(men_data, aes (x = cigsPerDay)) + geom_histogram(fill = "green", alpha = 0.6, binwidth = 4) + ggtitle("Distribution of The Amount of Cigarettes Smoked by Male Smokers") + xlab("Cigarettes Per Day")
+ggplot(women_data, aes (x = cigsPerDay)) + geom_histogram(fill = "pink", alpha = 0.6, binwidth = 4) + ggtitle("Distribution of The Amount of Cigarettes Smoked by Female Smokers") + xlab("Cigarettes Per Day")
+
+#BPMeds
+ggplot(men_data, aes(x = "", fill = as.factor(BPMeds))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Men on Blood Pressure Medication") + theme_void() + scale_fill_discrete(name = "People", labels = c("Not on BP Meds", "On BP Meds"))
+ggplot(women_data, aes(x = "", fill = as.factor(BPMeds))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Women on Blood Pressure Medication") + theme_void() + scale_fill_discrete(name = "People", labels = c("Not on BP Meds", "On BP Meds"))
+
+#prevalentStroke
+ggplot(men_data, aes(x = "", fill = as.factor(prevalentStroke))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Men with a History of Stroke") + theme_void() + scale_fill_discrete(name = "People", labels = c("No History of Stroke", "History of Stroke"))
+ggplot(women_data, aes(x = "", fill = as.factor(prevalentStroke))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Women with a History of Stroke") + theme_void() + scale_fill_discrete(name = "People", labels = c("No History of Stroke", "History of Stroke"))
+
+#prevalentHyp
+ggplot(men_data, aes(x = "", fill = as.factor(prevalentHyp))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Men with a History of Hypertension") + theme_void() + scale_fill_discrete(name = "People", labels = c("No History of Hypertension", "History of Hypertension"))
+ggplot(women_data, aes(x = "", fill = as.factor(prevalentHyp))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Women with a History of Hypertension") + theme_void() + scale_fill_discrete(name = "People", labels = c("No History of Hypertension", "History of Hypertension"))
+
+#diabetes
+ggplot(men_data, aes(x = "", fill = as.factor(diabetes))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Men with Diabetes") + theme_void() + scale_fill_discrete(name = "People", labels = c("No Diabetes", "Diabetes"))
+ggplot(women_data, aes(x = "", fill = as.factor(diabetes))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Women with Diabetes") + theme_void() + scale_fill_discrete(name = "People", labels = c("No Diabetes", "Diabetes"))
+
+#totChol
+ggplot(men_data, aes(x = totChol)) + geom_density(fill = "orange", alpha = 0.5) + ggtitle("Distribution of the Total Cholesterol for Men") + xlab("Total Cholesterol")
+ggplot(women_data, aes(x = totChol)) + geom_density(fill = "purple", alpha = 0.5) + ggtitle("Distribution of the Total Cholesterol for Women") + xlab("Total Cholesterol")
+
+#sysBP
+ggplot(men_data, aes(x = sysBP)) + geom_density(fill = "lightblue", alpha = 0.6) + ggtitle("Distribution of Systolic BP for Men") + xlab("Systolic Blood Pressure")
+ggplot(women_data, aes(x = sysBP)) + geom_density(fill = "yellow", alpha = 0.6) + ggtitle("Distribution of Systolic BP for Women") + xlab("Systolic Blood Pressure")
+
+#diaBP
+ggplot(men_data, aes(x = diaBP)) + geom_density(fill = "lightgreen", alpha = 0.5) + ggtitle("Distribution of Diastolic BP for Men") + xlab("Diastolic Blood Pressure")
+ggplot(women_data, aes(x = diaBP)) + geom_density(fill = "orangered", alpha = 0.5) + ggtitle("Distribution of Diastolic BP for Women") + xlab("Diastolic Blood Pressure")
+
+#BMI
+ggplot(men_data, aes (x = BMI)) + geom_histogram(fill = "brown", alpha = 0.9, binwidth = 2) + ggtitle("Distribution of Men BMI")
+ggplot(women_data, aes (x = BMI)) + geom_histogram(fill = "gray", alpha = 0.9, binwidth = 2) + ggtitle("Distribution of Women BMI")
+
+#heartRate
+ggplot(men_data, aes(x = heartRate)) + geom_density(fill = "purple", alpha = 0.6) + ggtitle("Distribution of Heart Rate for Men") + xlab("Heart Rate")
+ggplot(women_data, aes(x = heartRate)) + geom_density(fill = "pink", alpha = 0.6) + ggtitle("Distribution of Heart Rate for Women") + xlab("Heart Rate")
+
+#glucose
+ggplot(men_data, aes(x = glucose)) + geom_density(fill = "green", alpha = 0.6) + ggtitle("Distribution of Glucose for Men") + xlab("Glucose")
+ggplot(women_data, aes(x = glucose)) + geom_density(fill = "blue", alpha = 0.6) + ggtitle("Distribution of Glucose for Women") + xlab("Glucose")
+
+#tenYearCHD
+
+ggplot(men_data, aes(x = "", fill = as.factor(TenYearCHD))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Men That Developed Coronary Heart Disease") + theme_void() + scale_fill_discrete(name = "People", labels = c("No CHD", "CHD"))
+ggplot(women_data, aes(x = "", fill = as.factor(TenYearCHD))) + geom_bar(position = "stack") + coord_polar("y", start=0) + ggtitle("Distribution of Women That Developed Coronary Heart Disease") + theme_void() + scale_fill_discrete(name = "People", labels = c("No CHD", "CHD"))
